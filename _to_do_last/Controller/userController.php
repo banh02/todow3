@@ -71,7 +71,7 @@ class userController
         if (count($user->getUserByUsername()) > 0)
             self::sendResponse(409, "Username already exists!");
 
-        if ($user->insert())
+        if ($user->create())
             self::sendResponse(201, "user created successfully");
         else
             self::sendResponse(500, "Failed to create user!");
